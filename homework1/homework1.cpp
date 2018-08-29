@@ -20,15 +20,17 @@ How many sodas did Tim drink on his extra thirsty day?
 
 using namespace std;
 
-int sodadrinked(int e,int f, int c)
+int sodadrinked(int e,int f, int c, int &ops)
 {
 	int total;
-	int bought=(e+f)/c+(e+f)%c;
-	total=(e+f)/c;
-	while(bought >=c)
+	int bought=(e+f)/c+(e+f)%c; //5
+	total=(e+f)/c; //3
+	ops=8;
+	while(bought >=c) //6
 	{
 		total+=bought/c;
 		bought= bought/c +bought%c;
+		ops+=6;
 	}
 
 
@@ -43,10 +45,12 @@ int main(int argc, char *argv[]){
 	int numempty, numfound, costper;
 	int e, f, c;
 	cin >> numempty >> numfound >>costper;
+	int ops=0;
 	
 
-	cout<<sodadrinked(numempty,numfound,costper)<<endl;
-	
+	cout<<sodadrinked(numempty,numfound,costper,ops)<<endl;
+	sodadrinked(numempty,numfound,costper,ops);
+	cout<< "ops count:" << ops;
 	return 0;
 
 }
