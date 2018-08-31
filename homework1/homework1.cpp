@@ -25,12 +25,12 @@ int sodadrinked(int e,int f, int c, int &ops)
 	int total;
 	int bought=(e+f)/c+(e+f)%c; //5
 	total=(e+f)/c; //3
-	ops=8;
+	//ops=8;
 	while(bought >=c) //6
 	{
 		total+=bought/c;
 		bought= bought/c +bought%c;
-		ops+=6;
+		//ops+=6;
 	}
 
 
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]){
 
 	cout<<sodadrinked(numempty,numfound,costper,ops)<<endl;
 	sodadrinked(numempty,numfound,costper,ops);
-	cout<< "ops count:" << ops;
+	//cout<< "ops count:" << ops;
 	return 0;
 
 }
